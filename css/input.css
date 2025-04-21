@@ -3,70 +3,75 @@
 @tailwind utilities;
 
 
-.back{
-    background-image: url(../Assets/home/back.jpg);
+.back {
+  background-image: url(../Assets/home/back.jpg);
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 @keyframes slide {
-    0% {
-      transform: translateX(100%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(100%);
   }
 
-  .slide-animation {
-    animation: slide 15s linear infinite;
-    white-space: nowrap;
-    display: inline-block;
-    position: relative;
+  100% {
+    transform: translateX(-100%);
   }
+}
 
-  .marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-  }
+.slide-animation {
+  animation: slide 15s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
 
 /* start nav mobile */
-.view{
-    left: -300px;
-    transition: 0.3s ease;
+.view {
+  left: -300px;
+  transition: 0.3s ease;
 }
 
-body{
-    font-family: "Montserrat", sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
 }
+
 /* end nav mobile */
-.propganda{
-    background-image: linear-gradient(rgba(0,0,0,0.5) , rgba(0,0,0,0.5)) ,url(../Assets/home/nav\ photo.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 70vh;
-    background-attachment: fixed;
+.propganda {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Assets/home/nav\ photo.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  background-attachment: fixed;
 }
 
 .slick-slide {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .scrollbar-hide {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 
 
-  /* top button */
-.top{
-    display: none;
+/* top button */
+.top {
+  display: none;
 }
