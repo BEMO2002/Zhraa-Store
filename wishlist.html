@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="CSS/input.css">
+  <link rel="stylesheet" href="dist/output.css">
+  <title>Wishlist - Modern Islamic Design</title>
+</head>
+
+<body>
+  <!-- Header section (same as index.html) -->
+  <header>
+    <div class=" mx-auto">
+      <!--  start desk nav -->
+      <div class="flex items-center justify-center mb-3 mt-3 text-center">
+        <div class="marquee-container">
+          <p class="text-primary lg:text-xl text-sm"><span class="slide-animation">FREE SHIPPING FOR ORDERS OVER
+              2000EGP* | WORLDWIDE SHIPPING</span></p>
+        </div>
+      </div>
+      <nav class="bg-secondary  flex flex-row justify-around ">
+        <div class=" mt-3">
+          <a href="">
+            <img src="./Assets/home/z (200 x 200 px) (100 x 100 px) (200 x 200 px) (1000 x 500 px).png" alt=""
+              class="w-[150px] lg:w-[180px]">
+          </a>
+        </div>
+        <div class="text-center mt-2 md:hidden hidden  xl:flex">
+          <ul class="flex flex-row items-center justify-center  gap-20 text-lg ">
+            <li>
+              <a href="" class="text-black link  leading-3">New Arrivals</a>
+            </li>
+            <li>
+              <a href="" class="text-black link  leading-3">Dresses</a>
+            </li>
+            <li>
+              <a href="" class="text-black link  leading-3">Tunics</a>
+            </li>
+            <li>
+              <a href="" class="text-black link  leading-3">Bottoms</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex items-center justify-center gap-4 relative ">
+          <i class="ri-search-line text-xl" id="search"></i>
+
+          <div class="text-center">
+            <button data-drawer-target="drawer-disabled-backdrop" data-drawer-show="drawer-disabled-backdrop"
+              data-drawer-backdrop="false" aria-controls="drawer-disabled-backdrop">
+              <i class="ri-user-line text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Add Wishlist Icon -->
+          <a href="wishlist.html" class="relative">
+            <i class="ri-heart-3-line text-xl"></i>
+            <span id="wishlist-count"
+              class="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center text-xs text-white">0</span>
+          </a>
+
+          <button type="button" class="relative rounded-full p-1 text-gray-800 hover:text-black focus:outline-none"
+            id="cart-button">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">cart</span>
+            <i class="ri-shopping-bag-4-line text-xl"></i>
+            <span
+              class="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center text-xs text-white">0</span>
+          </button>
+          <div id="cart-popup"
+            class="hidden absolute lg:right-0 -right-5 mt-2 lg:w-[500px] w-[390px] bg-white rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
+            style="top: 100%;">
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Shopping Cart</h3>
+                <img src="./Assets/home/logo.webp" class="w-[120px]" alt="">
+              </div>
+              <div id="cart-items" class="space-y-3 max-h-96 overflow-y-auto">
+                <img src="./Assets/collection/cart-empty.png" alt="" class="mx-auto w-[200px]">
+              </div>
+              <div class="mt-4 pt-4 border-t">
+                <div class="flex justify-between items-center mb-4">
+                  <span class="font-semibold">Total:</span>
+                  <span class="font-semibold total-price">$0.00</span>
+                </div>
+                <div>
+                  <img src="./Assets/collection/payment.webp" alt="" class="w-[250px] mx-auto mb-5 cursor-pointer">
+                </div>
+                <button id="checkout-button" class="w-full bg-primary text-white py-2 px-4 rounded-md">
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      <!-- end desk nav -->
+      <!-- mobile nav -->
+      <nav class="view bg-[#fff] fixed w-[300px] left-0 top-0 h-screen  shadow-2xl  transition-all duration-300 z-40">
+        <div
+          class="close-btn bg-black w-8 lg:w-10 h-10  relative -right-full top-60 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
+          <i class=" close-btn-icon ri-align-justify text-xl lg:text-2xl text-white"></i>
+        </div>
+        <!-- logo -->
+        <div class="px-2 flex flex-col  h-full">
+          <a href="#" class="w-[200px] mb-2  mx-auto">
+            <img src="./Assets/home/logo.webp" alt="" class="">
+          </a>
+          <hr>
+          <div class="mt-2">
+            <img src="./Assets/home/nav photo.webp" alt="">
+          </div>
+          <div class=" flex items-center justify-center space-x-4 mt-7 bg-secondary px-2 py-3 rounded-xl">
+            <div>
+              <i class="ri-user-line bg-white text-black font-normal p-4 text-xl border rounded-full"></i>
+            </div>
+            <div class="flex flex-col">
+              <a href="" class="font-semibold text-xl">Sign in </a>
+              <p class="text-[15px]">Don't have an account?</p>
+            </div>
+          </div>
+          <!-- list -->
+          <ul class=" flex flex-col  gap-y-10 pt-10 text-lg ml-4 mb-2">
+            <li class="flex items-center gap-4 justify-start">
+              <a href="" class="link">New Arrivals</a>
+            </li>
+            <li class="flex items-center gap-4 justify-start">
+              <a href=""" class=" link">Dresses</a>
+            </li>
+            <li class="flex items-center gap-4 justify-start">
+              <a href="" class="link">Tunics</a>
+            </li>
+            <li class="flex items-center gap-4 justify-start">
+              <a href="" class="link">Bottoms</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">My Wishlist</h1>
+
+    <div id="wishlist-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Wishlist items will be dynamically added here -->
+    </div>
+
+    <div id="empty-wishlist" class="text-center py-8">
+      <img src="./Assets/whish/heart2.webp" alt="Empty wishlist" class="mx-auto w-[300px] lg:w-[400px] mb-4">
+      <p class="text-gray-600 text-lg">Your wishlist is empty</p>
+      <a href="index.html"
+        class="inline-block mt-4 bg-[#5C4D3E] text-white py-2 px-6 rounded hover:opacity-90 transition-all duration-300">
+        Continue Shopping
+      </a>
+    </div>
+  </main>
+          <!-- start footer -->
+          <footer class="footer pt-16 xl:pt-[px] font-semibold text-white  bg-primary">
+            <div class="container mx-auto pb-12 xl:pb-[100px] car-bottom">
+                <div class="flex flex-col lg:flex-row gap-x-5 gap-y-10">
+                    <div class="footer__item flex-1">
+                        <p class="mb-[50px] text-2xl text-black">Ready to start with Us?</p>
+                        <div class="flex flex-col gap-y-3 mb-10">
+                            <div class="flex items-center gap-x-[6px]">
+                                <i class="ri-map-pin-fill text-[24px] text-assent "></i>
+                                <div>123 Alering, Milano, Ny</div>
+                            </div>
+                            <div class="flex items-center gap-x-[6px]">
+                                <i class="ri-mail-fill text-[24px] text-assent"></i>
+                                <div>Insove@email.com</div>
+                            </div>
+                            <div class="flex items-center gap-x-[6px]">
+                                <i class="ri-phone-fill text-[24px] text-assent "></i>
+                                <div>(+123) 365 9876</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-[14px] text-[30px]">
+                            <div
+                                class="p-[10px] rounded-[10px] shadow-custom2 text-assent  hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-facebook-circle-fill"></i>
+                            </div>
+                            <div
+                                class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-instagram-fill"></i>
+                            </div>
+                            <div
+                                class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-whatsapp-fill"></i>
+                            </div>
+                            <div
+                                class="p-[10px] rounded-[10px] shadow-custom2 text-assent   hover:text-assent cursor-pointer transition-all">
+                                <i class="ri-pinterest-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__item flex-1">
+                        <h4 class="text-[20px] xl:text-[26px] font-semibold capitalize text-primary mb-5">Quick Links
+                        </h4>
+                        <div class="flex gap-x-5">
+                            <ul class="flex-1 flex flex-col gap-y-5">
+                                <li><a href="#" class="hover:text-assent transition-all">Home</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">About Us</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Department</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">services</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Blog</a></li>
+                            </ul>
+                            <ul class="flex-1 flex flex-col gap-y-5">
+                                <li><a href="#" class="hover:text-assent transition-all">Our Pricing</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Contact</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Careers</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Faqs</a></li>
+                                <li><a href="#" class="hover:text-assent transition-all">Privecy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__item flex-1">
+                        <h4 class="text-[20px] xl:text-[26px] font-semibold capitalize text-primary mb-5">Opening Hours
+                        </h4>
+                        <div class="flex flex-col  gap-5">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div>
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div>
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div>
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center border-b pb-[10px]">
+                                    <div>Monday - Thursday</div>
+                                    <div class="text-assent">8:00 Am - 6:00 Pm</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-[30px] border-t text-center text-base">&copy; 2025 Zhraa - All Rights Reserved.</div>
+        </footer>
+        <!-- end footer -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/wishlist.js"></script>
+</body>
+
+</html>

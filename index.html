@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="shortcut icon" href="assets/home/buyCarIcon.eeb2e066.svg" type="image/x-icon">
+  <link rel="stylesheet" href="CSS/input.css">
+  <link rel="stylesheet" href="dist/output.css">
+  <style>
+    .zoom-lens {
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+  </style>
+
+  <title>Souviner Zhraa</title>
+</head>
+
+<body>
+
+  <!-- start header of Navbar -->
+  <header>
+    <div class=" mx-auto">
+      <!--  start desk nav -->
+      <div class="flex items-center justify-center mb-3 mt-3 text-center">
+        <div class="marquee-container">
+          <p class="text-primary lg:text-xl text-sm"><span class="slide-animation">FREE SHIPPING FOR ORDERS OVER
+              2000EGP* | WORLDWIDE SHIPPING</span></p>
+        </div>
+      </div>
+      <nav class="bg-secondary  flex flex-row justify-around ">
+        <div class=" mt-3">
+          <a href="https://m.me/Zahraakhaled95">
+            <img src="./Assets/home/z (200 x 200 px) (100 x 100 px) (200 x 200 px) (1000 x 500 px).png" alt=""
+              class="w-[150px] lg:w-[180px]">
+          </a>
+        </div>
+        <div class="text-center mt-2 md:hidden hidden  xl:flex">
+          <ul class="flex flex-row items-center justify-center  gap-20 text-lg ">
+            <li>
+              <a href="https://m.me/Zahraakhaled95" class="text-black link  leading-3">FingerPrint</a>
+            </li>
+            <li>
+              <a href="https://m.me/Zahraakhaled95" class="text-black link  leading-3">Tray</a>
+            </li>
+            <li>
+              <a href="https://m.me/Zahraakhaled95" class="text-black link  leading-3">Frames</a>
+            </li>
+            <li>
+              <a href="https://m.me/Zahraakhaled95" class="text-black link  leading-3">Mirror</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex items-center justify-center gap-4 relative ">
+          <i class="ri-search-line text-xl" id="search"></i>
+
+          <div class="text-center">
+            <button data-drawer-target="drawer-disabled-backdrop" data-drawer-show="drawer-disabled-backdrop"
+              data-drawer-backdrop="false" aria-controls="drawer-disabled-backdrop">
+              <i class="ri-user-line text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Add Wishlist Icon -->
+          <a href="wishlist.html" class="relative">
+            <i class="ri-heart-3-line text-xl"></i>
+            <span id="wishlist-count"
+              class="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center text-xs text-white">0</span>
+          </a>
+
+          <button type="button" class="relative rounded-full p-1 text-gray-800 hover:text-black focus:outline-none"
+            id="cart-button">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">cart</span>
+            <i class="ri-shopping-bag-4-line text-xl"></i>
+            <span
+              class="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center text-xs text-white">0</span>
+          </button>
+          <div id="cart-popup"
+            class="hidden absolute lg:right-0 -right-5 mt-2 lg:w-[500px] w-[390px] bg-white rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
+            style="top: 100%;">
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Shopping Cart</h3>
+                <img src="./Assets/home/logo.webp" class="w-[120px]" alt="">
+              </div>
+              <div id="cart-items" class="space-y-3 max-h-96 overflow-y-auto">
+                <img src="./Assets/collection/cart-empty.png" alt="" class="mx-auto w-[200px]">
+              </div>
+              <div class="mt-4 pt-4 border-t">
+                <div class="flex justify-between items-center mb-4">
+                  <span class="font-semibold">Total:</span>
+                  <span class="font-semibold total-price">$0.00</span>
+                </div>
+                <div>
+                  <img src="./Assets/collection/payment.webp" alt="" class="w-[250px] mx-auto mb-5 cursor-pointer">
+                </div>
+                <button id="checkout-button" class="w-full bg-primary text-white py-2 px-4 rounded-md">
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      <!-- end desk nav -->
+      <!-- mobile nav -->
+      <nav class="view bg-[#fff] fixed w-[300px] left-0 top-0 h-screen  shadow-2xl  transition-all duration-300 z-40">
+        <div
+          class="close-btn bg-black w-8 lg:w-10 h-10  relative -right-full top-60 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all">
+          <i class=" close-btn-icon ri-align-justify text-xl lg:text-2xl text-white"></i>
+        </div>
+        <!-- logo -->
+        <div class="px-2 flex flex-col  h-full">
+          <a href="#" class="w-[200px] mb-2  mx-auto">
+            <img src="./Assets/home/logo.webp" alt="" class="">
+          </a>
+          <hr>
+          <div class="mt-2">
+            <img src="./Assets/home/passes.jpg" alt="">
+          </div>
+          <div class=" flex items-center justify-center space-x-4 mt-7 bg-secondary px-2 py-3 rounded-xl">
+            <div>
+              <i class="ri-user-line bg-white text-black font-normal p-4 text-xl border rounded-full"></i>
+            </div>
+            <div class="flex flex-col">
+              <a href="https://m.me/Zahraakhaled95" class="font-semibold text-xl">Sign in </a>
+              <p class="text-[15px]">Don't have an account?</p>
+            </div>
+          </div>
+          <!-- list -->
+          <ul class=" flex flex-col  gap-y-10 pt-10 text-lg ml-4 mb-2">
+            <li class="flex items-center gap-4 justify-start">
+              <a href="https://m.me/Zahraakhaled95" class="link">FingerPrint</a>
+            </li>
+            <li class="flex items-center gap-4 justify-start">
+              <a href="https://m.me/Zahraakhaled95"" class=" link">Tray</a>
+            </li>
+            <li class="flex items-center gap-4 justify-start">
+              <a href="https://m.me/Zahraakhaled95" class="link">Frames</a>
+            </li>
+            <li class="flex items-center gap-4 justify-start">
+              <a href="https://m.me/Zahraakhaled95" class="link">Mirrors</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header of Navbar -->
+  <!-- start top button -->
+  <button
+    class="top  p-2 lg:p-[15px] bg-primary text-[#fff] border rounded-md  font-bold fixed right-[10px] bottom-[20px] z-50 ">
+    <i class="ri-arrow-up-double-line text-xl"></i>
+  </button>
+  <!-- end top button -->
+  </div>
+  <!-- end offer -->
+  <!-- start popup discount -->
+  <div id="offer popup"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 transition-all duration-500  opacity-0 ">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-[500px] relative">
+      <button onclick="closeOfferPopup()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="ri-close-line text-3xl"></i>
+      </button>
+      <div class="mt-5 flex items-center justify-center">
+        <img src="./Assets/home/offer.webp" alt="discount" class="w-[400px]">
+      </div>
+      <div class="mt-5 flex items-center justify-center">
+        <input type="email" name="" id=""
+          class="border-t-0 border-r-0 border-l-0 border-b-2 border-b-black w-[80%] focus:ring-0 focus:outline-none p-1"
+          placeholder="Your Email" required>
+      </div>
+      <div class="mt-5 flex items-center justify-center">
+        <a href="https://m.me/Zahraakhaled95" type="submit" class="bg-black text-white px-16 py-2">Get 50% Discount</a>
+      </div>
+    </div>
+  </div>
+  <!-- end popup discount -->
+  <!-- start popup search -->
+  <div id="search popup"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 transition-all duration-500  opacity-0 ">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-[700px] relative">
+      <button onclick="closeSearchPopup()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="ri-close-line text-3xl"></i>
+      </button>
+
+      <form class="flex items-center max-w-lg mx-auto mt-7">
+        <label for="voice-search" class="sr-only">Search</label>
+        <div class="relative w-full">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 21 21">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11.15 5.6h.01m3.337 1.913h.01m-6.979 0h.01M5.541 11h.01M15 15h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 2.043 11.89 9.1 9.1 0 0 0 7.2 19.1a8.62 8.62 0 0 0 3.769.9A2.013 2.013 0 0 0 13 18v-.857A2.034 2.034 0 0 1 15 15Z" />
+            </svg>
+          </div>
+          <input type="text" id="voice-search"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search Mockups..." required />
+          <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 7v3a5.006 5.006 0 0 1-5 5H6a5.006 5.006 0 0 1-5-5V7m7 9v3m-3 0h6M7 1h2a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3Z" />
+            </svg>
+          </button>
+        </div>
+        <button type="submit"
+          class="inline-flex items-center py-2.5 px-3 ms-2 text-sm font-medium text-white bg-primary rounded-lg border focus:ring-4 focus:outline-none focus:ring-primary ">
+          <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>Search
+        </button>
+      </form>
+
+      <p class="mt-7 mb-0 text-sm font-normal">Hot Searches:</p>
+      <div class="flex items-center mt-3 justify-start space-x-5">
+        <span class="px-4 cursor-pointer py-1 rounded-full bg-secondary text-[#000] text-sm">Dresses</span>
+        <span class="px-4 cursor-pointer py-1 rounded-full bg-secondary text-[#000] text-sm">Wallets</span>
+        <span class="px-4 cursor-pointer py-1 rounded-full bg-secondary text-[#000] text-sm">Bags</span>
+      </div>
+    </div>
+  </div>
+  <!-- end popup search -->
+  <!-- start home -->
+  <div class="section">
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative  overflow-hidden  h-[400px] lg:h-[700px]">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="./Assets/home/home5.jpg" class="block w-full h-full object-cover" alt="...">
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 p-4">
+            <h3 class="text-xl md:text-4xl font-bold mb-4">NEW COLLECTION</h3>
+            <button
+              class="relative lg:px-10 lg:py-3 px-5 py-2  bg-white isolation-auto z-10  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-primary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center  text-xl font-semibold text-primary shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="./Assets/home/home6.jpg" class="block w-full h-full object-cover " alt="...">
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 p-4">
+            <h3 class="text-xl md:text-4xl font-bold mb-4">NEW COLLECTION</h3>
+            <button
+              class="relative lg:px-10 lg:py-3 px-5 py-2  bg-white isolation-auto z-10  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-primary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center  text-xl font-semibold text-primary shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="./Assets/home/home4.jpg" class="block w-full h-full object-cover" alt="...">
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 p-4">
+            <h3 class="text-xl md:text-4xl font-bold mb-4">NEW COLLECTION</h3>
+            <button
+              class="relative lg:px-10 lg:py-3 px-5 py-2  bg-white isolation-auto z-10  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-primary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center  text-xl font-semibold text-primary shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="./Assets/home/passes.jpg" class="block w-full h-full object-cover" alt="...">
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 p-4">
+            <h3 class="text-xl md:text-4xl font-bold mb-4">NEW COLLECTION</h3>
+            <button
+              class="relative lg:px-10 lg:py-3 px-5 py-2  bg-white isolation-auto z-10  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-primary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center  text-xl font-semibold text-primary shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="./Assets/home/home3.jpg" class="block w-full h-full object-cover" alt="...">
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 p-4">
+            <h3 class="text-xl md:text-4xl font-bold mb-4">NEW COLLECTION</h3>
+            <button
+              class="relative lg:px-10 lg:py-3 px-5 py-2 bg-white isolation-auto z-10  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-primary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center  text-xl font-semibold text-primary shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+          data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+          data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+          data-carousel-slide-to="4"></button>
+      </div>
+      <!-- Slider controls -->
+      <button type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 1 1 5l4 4" />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <!-- end home -->
+  <!-- start about -->
+  <section class="pt-32 pb-10 ">
+    <div class=" mx-auto container">
+      <div class="flex items-center justify-center w-full mb-20 box-bottom">
+        <div class="w-1/12 border-t-2 border-primary"></div>
+        <span class="mx-4 text-2xl lg:text-4xl font-bold ">wedding products</span>
+        <div class="w-1/12 border-t-2 border-primary"></div>
+      </div>
+      <div class="grid lg:grid-cols-4 grid-cols-2 gap-4">
+        <div class="flex flex-col items-center">
+          <img src="./Assets/wedding/2_efabdb0b-044a-48de-82d4-972f51414328.png" alt=""
+            class="lg:w-[200px] w-[200px] rounded-full">
+          <p class="mt-3 text-lg font-bold text-primary">MANDEEL</p>
+        </div>
+        <div class="flex flex-col items-center justify-center text-center">
+          <img src="./Assets/wedding/3_49bd19a2-58b7-4f62-b519-eb54277a4c17.png" alt=""
+            class="lg:w-[200px] w-[200px] rounded-full">
+          <p class="mt-3 text-lg font-bold text-primary ">Wedding fingerprint</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="./Assets/wedding/5.png" alt="" class="lg:w-[200px] w-[200px] rounded-full">
+          <p class="mt-3 text-lg font-bold text-primary">Engagement tray</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="./Assets/wedding/9.png" alt="" class="lg:w-[200px] w-[200px] rounded-full">
+          <p class="mt-3 text-lg font-bold text-primary">Hoop</p>
+        </div>
+      </div>
+      <div class="text-center mt-20">
+        <a href="https://m.me/Zahraakhaled95"
+          class="lg:px-[70px] lg:py-[13px] px-[30px] py-[17px] bg-primary hover:bg-secondary  hover:text-white  duration-500 text-white text-lg font-bold rounded-lg ">See
+          More</a>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+  <!-- start collection -->
+  <section class="pt-10  pb-10 bg-[#fff] overflow-hidden back">
+    <div class="flex items-center justify-center w-full mb-8 box-bottom">
+      <div class="w-1/12 border-t-2 border-primary"></div>
+      <span class="mx-4 text-lg lg:text-3xl font-bold ">Fingerprint of marriage contract</span>
+      <div class="w-1/12 border-t-2 border-primary"></div>
+    </div>
+    <p class="text-lg lg:text-xl text-center  mb-3">"The price varies depending on the material."</p>
+    <div class="container mx-auto">
+      <div class="  flex gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap items-cente" id="container-cloth">
+        <div class="car  shadow cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/home/pass1.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/home/pass1.jpg" data-hover="./Assets/home/pass2.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold"> marriage contract</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">220 <del
+                    class="text-gray-600 text-sm">300</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  shadow cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/home/pass3.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/home/pass3.jpg" data-hover="./Assets/home/pass5.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold"> marriage contract</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">220 <del
+                    class="text-gray-600 text-sm">300</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  shadow cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/home/pass5.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/home/pass5.jpg" data-hover="./Assets/home/pass3.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">marriage contract</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">250 <del
+                    class="text-gray-600 text-sm">300</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  shadow cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/home/pass7 (1).webp" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/home/pass7 (1).webp" data-hover="./Assets/home/pass8.webp">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent  border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2 mt-6">
+              <h4 class="course-title text-primary font-semibold"> marriage contract</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">350 <del
+                    class="text-gray-600 text-sm">400</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  shadow cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/home/pass2.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/home/pass2.jpg" data-hover="./Assets/home/pass1.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300 rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">marriage contract</h4>
+
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">220 <del
+                    class="text-gray-600 text-sm">300</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="flex justify-between mt-4">
+        <button id="left-clo" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-right-line text-white text-2xl"></i></button>
+        <button id="right-clo" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-left-line text-white text-2xl"></i></button>
+      </div>
+  </section>
+  <hr>
+  <section class="pt-20  pb-10 bg-[#fff] overflow-hidden">
+    <div class="flex items-center justify-center w-full mb-20 box-bottom">
+      <div class="w-1/12 border-t-2 border-primary"></div>
+      <span class="mx-4 text-lg lg:text-3xl font-bold ">Engagement tray collections</span>
+      <div class="w-1/12 border-t-2 border-primary"></div>
+    </div>
+    <div class="container mx-auto">
+      <div class="  flex gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap items-cente" id="container-bag">
+        <div class="car   cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/shabka/sh1 (1).jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/shabka/sh1 (1).jpg" data-hover="./Assets/shabka/sh2.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold"> Engagement tray</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">350 <del
+                    class="text-gray-600 text-sm">400</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car   cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/shabka/sh5.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/shabka/sh5.jpg" data-hover="./Assets/shabka/sh4.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Engagement tray</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">220 <del
+                    class="text-gray-600 text-sm">300</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/shabka/sh6.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/shabka/sh6.jpg" data-hover="./Assets/shabka/sh4.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Engagement tray </h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">350 <del
+                    class="text-gray-600 text-sm">400</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/shabka/sh3.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/shabka/sh3.jpg" data-hover="./Assets/shabka/sh2.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent  border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold"> Engagement tray</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">350 <del
+                    class="text-gray-600 text-sm">400</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between mt-4">
+        <button id="left" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-right-line text-white text-2xl"></i></button>
+        <button id="right" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-left-line text-white text-2xl"></i></button>
+      </div>
+  </section>
+  <!-- end collection -->
+  <!-- start brands -->
+  <section class="pt-20 pb-10  overflow-hidden">
+    <div class="flex items-center justify-center w-full mb-8 box-bottom">
+      <div class="w-1/12 border-t-2 border-primary"></div>
+      <span class="mx-4 text-lg lg:text-3xl font-bold ">Collection Of Frames</span>
+      <div class="w-1/12 border-t-2 border-primary"></div>
+    </div>
+    <div class="container mx-auto">
+      <div class="brands-slider text-center cursor-pointer">
+        <div class="relative overflow-hidden group cursor-zoom-in">
+          <img src="./Assets/brands/p1.jpg" alt="brand logo"
+            class="w-[300px] lg:h-[300px] h-[200px] p-2 transition-transform duration-300 group-hover:scale-110">
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+          </div>
+        </div>
+        <div class="relative overflow-hidden group cursor-zoom-in">
+          <img src="./Assets/brands/p2.jpg" alt="brand logo"
+            class="w-[300px] lg:h-[300px] h-[200px] p-2 transition-transform duration-300 group-hover:scale-110">
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+          </div>
+        </div>
+        <div class="relative overflow-hidden group cursor-zoom-in">
+          <img src="./Assets/brands/p3.jpg" alt="brand logo"
+            class="w-[300px] lg:h-[300px] h-[200px] p-2 transition-transform duration-300 group-hover:scale-110">
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+          </div>
+        </div>
+        <div class="relative overflow-hidden group cursor-zoom-in">
+          <img src="./Assets/brands/p4.jpg" alt="brand logo"
+            class="w-[300px] lg:h-[300px] h-[200px] p-2 transition-transform duration-300 group-hover:scale-110">
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+          </div>
+        </div>
+        <div class="relative overflow-hidden group cursor-zoom-in">
+          <img src="./Assets/brands/p5.jpg" alt="brand logo"
+            class="w-[300px] lg:h-[300px] h-[200px] p-2 transition-transform duration-300 group-hover:scale-110">
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+          </div>
+        </div>
+        <div class="relative overflow-hidden group cursor-zoom-in">
+          <img src="./Assets/brands/p6.jpg" alt="brand logo"
+            class="w-[300px] lg:h-[300px] h-[200px] p-2 transition-transform duration-300 group-hover:scale-110">
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+          </div>
+        </div>
+      </div>
+      <div class=" flex items-center justify-center w-fit mx-auto bg-[#000] rounded-lg border-black border-1 mt-10">
+        <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[30px] py-[10px]">Order Now <i
+            class="ri-messenger-fill text-white"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- end brands -->
+  <!-- start mirror -->
+  <section class="pt-20  pb-10 bg-[#fff] overflow-hidden">
+    <div class="flex items-center justify-center w-full mb-20 box-bottom">
+      <div class="w-1/12 border-t-2 border-primary"></div>
+      <span class="mx-4 text-lg lg:text-3xl font-bold ">Dried rose and Mirrors</span>
+      <div class="w-1/12 border-t-2 border-primary"></div>
+    </div>
+    <div class="container mx-auto">
+      <div class="  flex gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap items-cente" id="container-mirror">
+        <div class="car   cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/mirror/flower1.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/mirror/flower1.jpg" data-hover="./Assets/mirror/flower2.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded ">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Dried rose</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">300 <del
+                    class="text-gray-600 text-sm">400</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car   cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="/Assets/mirror/flower3.jpg" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="/Assets/mirror/flower3.jpg" data-hover="/Assets/mirror/flower4.jpg">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded ">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Dried rose</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">300 <del
+                    class="text-gray-600 text-sm">400</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/mirror/Untitled design.png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/mirror/Untitled design.png" data-hover="./Assets/mirror/mirro2.png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded ">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Mirror </h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">800 <del
+                    class="text-gray-600 text-sm">850</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/mirror/mirror5.png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/mirror/mirror5.png" data-hover="./Assets/mirror/mirror4.png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent  border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Mirror</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">800 <del
+                    class="text-gray-600 text-sm">850</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/mirror/mirror6 (1).png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/mirror/mirror6 (1).png" data-hover="./Assets/mirror/mirror6 (2).png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent  border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Mirror</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">250 <del
+                    class="text-gray-600 text-sm">300</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between mt-4">
+        <button id="left-m" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-right-line text-white text-2xl"></i></button>
+        <button id="right-m" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-left-line text-white text-2xl"></i></button>
+      </div>
+  </section>
+  <!-- end mirror -->
+  <!-- start box -->
+  <section class="pt-20  pb-10 bg-[#fff] overflow-hidden">
+    <div class="flex items-center justify-center w-full mb-20 box-bottom">
+      <div class="w-1/12 border-t-2 border-primary"></div>
+      <span class="mx-4 text-lg lg:text-3xl font-bold ">A Collection Of Boxes</span>
+      <div class="w-1/12 border-t-2 border-primary"></div>
+    </div>
+    <div class="container mx-auto">
+      <div class="  flex gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap items-cente" id="container-box">
+        <div class="car   cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/box/Untitled design.png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/box/Untitled design.png" data-hover="./Assets/box/Untitled design (1).png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded ">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Dried rose</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">120 <del
+                    class="text-gray-600 text-sm">150</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car   cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/box/Untitled design (2).png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/box/Untitled design (2).png" data-hover="./Assets/box/Untitled design (3).png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded ">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Dried rose</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">120 <del
+                    class="text-gray-600 text-sm">150</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/box/Untitled design (4).png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/box/Untitled design (4).png" data-hover="./Assets/box/Untitled design (5).png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded ">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Mirror </h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">120 <del
+                    class="text-gray-600 text-sm">150</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="car  cursor-pointer rounded-lg course-card min-w-[310px] lg:min-w-[300px]">
+          <div class="relative">
+            <img src="./Assets/box/Untitled design (6).png" alt=""
+              class="course-image rounded-lg rounded-b-none transition-opacity duration-300 ease-in-out"
+              data-original="./Assets/box/Untitled design (6).png" data-hover="./Assets/box/Untitled design (7).png">
+            <div class="absolute top-3 left-3 ">
+              <div class=" flex flex-col p-2 gap-2 rounded shadow">
+                <i
+                  class=" add-to-cart-btn ri-shopping-cart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300 "></i>
+                <i
+                  class="ri-heart-line text-xl bg-[#fff] hover:bg-[#000] px-3 py-2 rounded-full hover:text-white  duration-300"></i>
+              </div>
+              <div class="absolute top-3 lg:-right-50 -right-52">
+                <span class="p-2 rounded bg-[#000] text-white">
+                  -10%
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="data bg-transparent  border-2 border-gray-300  rounded-lg rounded-t-none">
+            <div class=" p-2">
+              <h4 class="course-title text-primary font-semibold">Mirror</h4>
+              <div class="flex items-center justify-between mt-4 mb-2">
+                <h3 class="course-price font-semibold text-[#000000b6] text-lg">120 <del
+                    class="text-gray-600 text-sm">150</del><span class="font-semibold text-[#000] text-sm">Egp</span>
+                </h3>
+                <div class="flex items-center justify-center bg-[#000] rounded-full border-black border-1">
+                  <a href="https://m.me/Zahraakhaled95" class="text-white text-lg px-[14px] py-[7px]">Order Now <i
+                      class="ri-messenger-fill text-white"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between mt-4">
+        <button id="left-b" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-right-line text-white text-2xl"></i></button>
+        <button id="right-b" class="px-3 py-2 bg-primary rounded"><i
+            class="ri-corner-down-left-line text-white text-2xl"></i></button>
+      </div>
+  </section>
+  <!-- end box -->
+
+
+
+
+  <!-- drawer component -->
+  <div id="drawer-disabled-backdrop"
+    class="fixed shadow top-0 left-0 z-50 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white lg:w-[500px] w-[400px] dark:bg-gray-800"
+    tabindex="-1" aria-labelledby="drawer-disabled-backdrop-label">
+    <h5 id="drawer-disabled-backdrop-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+      Sign up</h5>
+    <button type="button" data-drawer-hide="drawer-disabled-backdrop" aria-controls="drawer-disabled-backdrop"
+      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+      </svg>
+      <span class="sr-only">Close menu</span>
+    </button>
+    <div class="mt-4">
+      <img src="./Assets/home/login.webp" alt="">
+    </div>
+    <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0">
+      <div
+        class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
+          <h5>Register with</h5>
+        </div>
+        <div class="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
+          <div class="w-3/12 max-w-full px-1 ml-auto flex-0">
+            <a
+              class="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink32" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                viewBox="0 0 64 64" height="32px" width="24px">
+                <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                  <g fill-rule="nonzero" transform="translate(3.000000, 3.000000)">
+                    <circle r="29.4882047" cy="29.4927506" cx="29.5091719" fill="#3C5A9A"></circle>
+                    <path fill="#FFFFFF"
+                      d="M39.0974944,9.05587273 L32.5651312,9.05587273 C28.6886088,9.05587273 24.3768224,10.6862851 24.3768224,16.3054653 C24.395747,18.2634019 24.3768224,20.1385313 24.3768224,22.2488655 L19.8922122,22.2488655 L19.8922122,29.3852113 L24.5156022,29.3852113 L24.5156022,49.9295284 L33.0113092,49.9295284 L33.0113092,29.2496356 L38.6187742,29.2496356 L39.1261316,22.2288395 L32.8649196,22.2288395 C32.8649196,22.2288395 32.8789377,19.1056932 32.8649196,18.1987181 C32.8649196,15.9781412 35.1755132,16.1053059 35.3144932,16.1053059 C36.4140178,16.1053059 38.5518876,16.1085101 39.1006986,16.1053059 L39.1006986,9.05587273 L39.0974944,9.05587273 L39.0974944,9.05587273 Z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="w-3/12 max-w-full px-1 flex-0">
+            <a
+              class="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                viewBox="0 0 64 64" height="32px" width="24px">
+                <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                  <g fill-rule="nonzero" fill="#000000" transform="translate(7.000000, 0.564551)">
+                    <path
+                      d="M40.9233048,32.8428307 C41.0078713,42.0741676 48.9124247,45.146088 49,45.1851909 C48.9331634,45.4017274 47.7369821,49.5628653 44.835501,53.8610269 C42.3271952,57.5771105 39.7241148,61.2793611 35.6233362,61.356042 C31.5939073,61.431307 30.2982233,58.9340578 25.6914424,58.9340578 C21.0860585,58.9340578 19.6464932,61.27947 15.8321878,61.4314159 C11.8738936,61.5833617 8.85958554,57.4131833 6.33064852,53.7107148 C1.16284874,46.1373849 -2.78641926,32.3103122 2.51645059,22.9768066 C5.15080028,18.3417501 9.85858819,15.4066355 14.9684701,15.3313705 C18.8554146,15.2562145 22.5241194,17.9820905 24.9003639,17.9820905 C27.275104,17.9820905 31.733383,14.7039812 36.4203248,15.1854154 C38.3824403,15.2681959 43.8902255,15.9888223 47.4267616,21.2362369 C47.1417927,21.4153043 40.8549638,25.1251794 40.9233048,32.8428307 M33.3504628,10.1750144 C35.4519466,7.59650964 36.8663676,4.00699306 36.4804992,0.435448578 C33.4513624,0.558856931 29.7884601,2.48154382 27.6157341,5.05863265 C25.6685547,7.34076135 23.9632549,10.9934525 24.4233742,14.4943068 C27.7996959,14.7590956 31.2488715,12.7551531 33.3504628,10.1750144">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="w-3/12 max-w-full px-1 mr-auto flex-0">
+            <a
+              class="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                viewBox="0 0 64 64" height="32px" width="24px">
+                <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                  <g fill-rule="nonzero" transform="translate(3.000000, 2.000000)">
+                    <path fill="#4285F4"
+                      d="M57.8123233,30.1515267 C57.8123233,27.7263183 57.6155321,25.9565533 57.1896408,24.1212666 L29.4960833,24.1212666 L29.4960833,35.0674653 L45.7515771,35.0674653 C45.4239683,37.7877475 43.6542033,41.8844383 39.7213169,44.6372555 L39.6661883,45.0037254 L48.4223791,51.7870338 L49.0290201,51.8475849 C54.6004021,46.7020943 57.8123233,39.1313952 57.8123233,30.1515267">
+                    </path>
+                    <path fill="#34A853"
+                      d="M29.4960833,58.9921667 C37.4599129,58.9921667 44.1456164,56.3701671 49.0290201,51.8475849 L39.7213169,44.6372555 C37.2305867,46.3742596 33.887622,47.5868638 29.4960833,47.5868638 C21.6960582,47.5868638 15.0758763,42.4415991 12.7159637,35.3297782 L12.3700541,35.3591501 L3.26524241,42.4054492 L3.14617358,42.736447 C7.9965904,52.3717589 17.959737,58.9921667 29.4960833,58.9921667">
+                    </path>
+                    <path fill="#FBBC05"
+                      d="M12.7159637,35.3297782 C12.0932812,33.4944915 11.7329116,31.5279353 11.7329116,29.4960833 C11.7329116,27.4640054 12.0932812,25.4976752 12.6832029,23.6623884 L12.6667095,23.2715173 L3.44779955,16.1120237 L3.14617358,16.2554937 C1.14708246,20.2539019 0,24.7439491 0,29.4960833 C0,34.2482175 1.14708246,38.7380388 3.14617358,42.736447 L12.7159637,35.3297782">
+                    </path>
+                    <path fill="#EB4335"
+                      d="M29.4960833,11.4050769 C35.0347044,11.4050769 38.7707997,13.7975244 40.9011602,15.7968415 L49.2255853,7.66898166 C44.1130815,2.91684746 37.4599129,0 29.4960833,0 C17.959737,0 7.9965904,6.62018183 3.14617358,16.2554937 L12.6832029,23.6623884 C15.0758763,16.5505675 21.6960582,11.4050769 29.4960833,11.4050769">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
+            <p class="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">or</p>
+          </div>
+        </div>
+        <div class="flex-auto p-6">
+          <form role="form text-left">
+            <div class="mb-4">
+              <input aria-describedby="email-addon" aria-label="Name" placeholder="Name"
+                class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                type="text">
+            </div>
+            <div class="mb-4">
+              <input aria-describedby="email-addon" aria-label="Email" placeholder="Email"
+                class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                type="email">
+            </div>
+            <div class="mb-4">
+              <input aria-describedby="password-addon" aria-label="Password" placeholder="Password"
+                class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                type="password">
+            </div>
+            <div class="min-h-6 pl-7 mb-0.5 block">
+              <input checked="" value="" type="checkbox"
+                class="w-5 h-5 ease-soft -ml-7 rounded-1.4 checked:bg-gradient-to-tl checked:from-gray-900 checked:to-slate-800 after:duration-250 after:ease-soft-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100"
+                id="terms">
+              <label for="terms" class="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"> I
+                agree the <a class="font-bold text-slate-700">Terms and Conditions</a>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 inline ml-1 fill-current text-green-500">
+                  <path
+                    d="M6.293 9.293a1 1 0 0 1 1.414 0L10 10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z">
+                  </path>
+                </svg>
+              </label>
+            </div>
+
+            <div class="text-center">
+              <button
+                class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
+                type="button">Sign up</button>
+            </div>
+            <p class="mt-4 mb-0 leading-normal text-sm">Already have an account? <a class="font-bold text-slate-700"
+                href="../pages/sign-in.html">Sign in</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end propganda -->
+  <!-- start footer -->
+  <footer class="bg-secondary">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-start lg:gap-8">
+        <div class="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div class="col-span-2">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900">Get the latest news!</h2>
+
+              <p class="mt-4 text-gray-500">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam
+                molestias.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+            <form class="w-full">
+              <label for="UserEmail" class="sr-only"> Email </label>
+
+              <div class="border border-gray-100 p-2 focus-within:ring-3 sm:flex sm:items-center sm:gap-4">
+                <input type="email" id="UserEmail" placeholder="Zhraa@gmail.com"
+                  class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm" />
+
+                <button
+                  class="mt-1 w-full bg-primary px-6 py-3 text-sm font-bold tracking-wide text-white uppercase transition-all hover:bg-white hover:text-primary duration-300 sm:mt-0 sm:w-auto sm:shrink-0">
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+
+
+
+
+
+
+          <ul class="col-span-2 flex justify-center gap-6 lg:col-span-5 lg:justify-center">
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                <span class="sr-only">Facebook</span>
+
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                <span class="sr-only">Instagram</span>
+
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                <span class="sr-only">Twitter</span>
+
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                <span class="sr-only">GitHub</span>
+
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+                <span class="sr-only">Dribbble</span>
+
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-gray-100 pt-8">
+        <div class="sm:flex sm:justify-between">
+          <p class="text-xs text-gray-500">&copy; 2022. Zhraa. All rights reserved.</p>
+
+          <ul class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
+            <li>
+              <a href="#" class="text-gray-500 transition hover:opacity-75"> Terms & Conditions </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-500 transition hover:opacity-75"> Privacy Policy </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-500 transition hover:opacity-75"> Cookies </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- end footer -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+  <script src="./js//wishlist.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
